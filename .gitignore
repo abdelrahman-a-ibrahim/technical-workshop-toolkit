@@ -1,0 +1,31 @@
+# Python and local tools
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+.DS_Store
+# Local secrets and runtime state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfplan
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+.terragrunt-cache/
+kubeconfig*
+# Generated output
+artifacts/
+logs/
+*.log
+*.db
+*.sqlite*

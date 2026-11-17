@@ -1,0 +1,18 @@
+{
+  "lesson": "duplicate-delivery",
+  "learner": "synthetic-learner",
+  "rubric": [
+    {
+      "criterion": "explains-idempotency",
+      "points": 3
+    },
+    {
+      "criterion": "tests-worker-restart",
+      "points": 4
+    },
+    {
+      "criterion": "documents-cleanup",
+      "points": 3
+    }
+  ]
+}
