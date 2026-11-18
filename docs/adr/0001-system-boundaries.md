@@ -1,28 +1,22 @@
 # ADR 0001: System boundaries and implementation approach
 
-Status: proposed / decision not yet made.
+Status: proposed.
 
 ## Context
-Create a practical teaching kit using the independent labs: a Python debugging workshop, an AWS event-processing lab and a Git collaboration simulation. Design learner outcomes and assessment before recording content.
+A toolkit for authoring and delivering practical workshops in Python, cloud engineering and Git collaboration. It organizes prerequisites, runnable examples, assessment rubrics, instructor guidance and accessible participant materials into a versioned delivery package.
 
-## Decision questions
-- Guided lab versus independent assessment
+## Questions
+- Guided development environment versus independent assessment
 - Local alternatives versus cloud fidelity
 - Evidence-based grading and accessible materials
 
-## Options
-1. Small local implementation with synthetic adapters.
-2. Integrated lab with real dependencies in a disposable environment.
-3. A justified alternative to be supplied during design.
+## Alternatives
+- A local implementation with synthetic external adapters.
+- An integrated deployment with real dependencies in an isolated environment.
+- A smaller implementation that preserves the core invariant.
 
 ## Decision
-Pending. Start by evaluating the smallest approach that can demonstrate the core invariant.
+Pending. Record the selected option, rejected alternatives and rationale before implementing external adapters.
 
-## Consequences to assess
-Correctness, complexity, cost, recovery, trust boundaries, portability and maintenance burden.
-
-## Evidence needed
-A failure experiment, a working implementation slice and a comparison of the alternatives.
-
-## Revisit when
-Document a concrete load, team, correctness or operational constraint that invalidates the selected approach.
+## Consequences
+Assess correctness, operational complexity, cost, security boundaries, recovery and maintenance. Define the concrete constraint that would justify revisiting the decision.

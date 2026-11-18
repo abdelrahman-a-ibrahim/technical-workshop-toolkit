@@ -1,5 +1,5 @@
-# Synthetic scenario
+# Development inputs
 
-`scenario.json` is a deliberately small input for design and early behavior tests. It is not a complete API schema and contains no real customer data. Treat sample identifiers, thresholds and outcomes as illustrative.
+`scenario.json` is a synthetic input fixture for defining contracts and implementing behavior tests. It is not a full API schema, benchmark or production dataset.
 
-During milestone 1, define a versioned contract and extend this set with valid, invalid, duplicate, conflicting and boundary cases appropriate to this project. Record expected outcomes separately and test the actual implementation. Do not infer production readiness from accepting this one fixture.
+Extend fixtures with valid, invalid, duplicate, conflicting and boundary cases as the contract stabilizes. Keep expected outcomes explicit and verify them against implemented behavior. Inputs must not contain credentials or real customer data.

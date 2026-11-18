@@ -1,15 +1,11 @@
 # Development workflow
 
-This repository begins as a foundation. Implement one milestone at a time.
-
-1. Read the relevant milestone and propose an ADR where the choice affects guarantees.
+1. Define the intended behavior and acceptance criteria from `docs/requirements.md`.
 2. Create a feature branch from `main`.
-3. Add behavior tests for one invariant, then implement the smallest useful change.
-4. Select and pin dependencies intentionally; record why they are required.
-5. Run foundation checks and the new implementation’s tests.
-6. Run the relevant failure exercise in a disposable environment.
-7. Update status, evidence and setup/cleanup instructions before merging.
+3. Implement one coherent behavior with meaningful tests.
+4. Pin dependencies when introduced and record architecture decisions.
+5. Run `python3 tools/check_project.py` plus relevant implementation tests.
+6. Exercise relevant failure/recovery scenarios in an isolated environment.
+7. Update setup, delivery status, operational documentation and measured results before merging.
 
-Commit examples: `docs: decide checkpoint boundary`, `feat: add idempotent state update`, `test: cover restart after acknowledgement failure`.
-
-Do not merge copied internal code, secrets or unverified benchmark claims. The foundation check is not a deployment or milestone approval gate.
+Review staged changes before committing. Keep credentials, generated cloud state and non-public third-party material outside the repository. A successful source check is not a runtime or release readiness gate.

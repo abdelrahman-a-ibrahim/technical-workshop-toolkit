@@ -1,12 +1,19 @@
-# Behavior test plan
+# Verification plan
 
-No implementation tests exist yet. Foundation checks do not count as behavior tests.
+Runtime behavior tests will be added with the implementation. The current source integrity check does not provide runtime coverage.
 
-Build meaningful tests as each behavior is implemented:
-1. Domain tests for invariants and explicit error results.
-2. Adapter contract tests, including malformed and unauthorized inputs.
-3. Integration tests against actual chosen dependencies, isolated from production.
-4. Relevant concurrency, retry, crash/restart and recovery tests.
-5. One reproducible end-to-end acceptance scenario.
+## Required behavior coverage
+- Each learning outcome maps to an exercise and an observable rubric criterion.
+- Instructor guidance explains common misconceptions and gives graduated hints.
+- Cloud cleanup and local alternatives are explicit.
+- Feedback or outcome claims distinguish self-review from actual learner evidence.
 
-Use `docs/failure-lab.md` and `docs/acceptance.md` for project-specific cases. A mock cannot establish real service ordering, consistency, replication or durability guarantees. Label simulator coverage and real-dependency coverage separately.
+## Failure coverage
+- Explain why a duplicate event is not necessarily a bug in the queue.
+- Guide a learner who confuses authentication with authorization.
+- Recover a deliberately broken Git branch without losing intended changes.
+- Adapt a cloud exercise for a learner without an AWS account.
+
+Add domain tests, adapter contract tests and integration tests as those components are implemented. Include relevant invalid input, unauthorized access, concurrency, retry and restart scenarios. Real dependency guarantees require real integration evidence; mocks alone cannot establish ordering, replication, consistency or durability.
+
+See [reliability](../docs/reliability.md) for execution/reporting requirements.

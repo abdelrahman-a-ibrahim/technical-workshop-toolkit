@@ -29,3 +29,7 @@ logs/
 *.log
 *.db
 *.sqlite*
+
+# Local development notes
+.personal/
+Private-Notes/

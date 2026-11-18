@@ -1,40 +1,32 @@
-# Architecture brief
+# Architecture
 
-Status: proposed, not implemented.
+Status: proposed. Components shown below are implementation targets.
 
-## Scenario
-Create a practical teaching kit using the independent labs: a Python debugging workshop, an AWS event-processing lab and a Git collaboration simulation. Design learner outcomes and assessment before recording content.
+## Product context
+A toolkit for authoring and delivering practical workshops in Python, cloud engineering and Git collaboration. It organizes prerequisites, runnable examples, assessment rubrics, instructor guidance and accessible participant materials into a versioned delivery package.
 
-## System boundary
+## Component view
 ```text
-Learning outcomes -> diagnostics -> guided labs -> independent challenge
+Learning outcomes -> diagnostics -> practical exercises -> independent challenge
                                                       |
                                           rubric / feedback / revision
 ```
 
-The first implementation must run against synthetic inputs or a local adapter. Add live infrastructure only as a separately documented step. Describe the trust boundary between the interface, persistence and any external system.
+## Design decisions
+- Guided development environment versus independent assessment
+- Local alternatives versus cloud fidelity
+- Evidence-based grading and accessible materials
 
-## Decisions to resolve
-1. Guided lab versus independent assessment
-2. Local alternatives versus cloud fidelity
-3. Evidence-based grading and accessible materials
+Record decisions and alternatives in [ADR 0001](adr/0001-system-boundaries.md). Define authoritative state, acknowledgement boundaries, identities, retry behavior and recovery ownership before implementing adapters.
 
-For each decision, record alternatives, rejected options, operational cost, failure behavior and the condition under which you would revisit it. Use [ADR 0001](adr/0001-system-boundaries.md) as a starting point; its status is proposed.
+## Interface boundary
+`src/technical_workshop_toolkit/interfaces.py` defines the initial application boundary. Return models and error contracts remain to be specified. These interfaces do not implement the component graph.
 
-## Before writing adapters
-- Identify the authoritative state and the acknowledgement/commit boundary.
-- Define stable identifiers, versioning and invalid input handling.
-- Describe concurrency, retry and recovery behavior; specify what is atomic and what is not.
-- Map identities and permissions. Separate data supplied by a user/tool from execution authority.
-- Define observable success, failure and missing telemetry.
-- Explain resource cleanup and state retention.
+## Integration boundaries
+Local adapters and synthetic fixtures precede external integrations. Every live adapter needs an explicit identity, permission scope, timeout strategy and observability contract. Separate user-supplied content from execution authority.
 
-## Diagram assignment
-Create your own component diagram plus a sequence diagram for one happy path and one partial-failure path. Label ownership, persistence, identities and acknowledgement points. Diagrams should describe the implemented system when promoted into portfolio evidence.
+## Deployment design
+Document topology, dependency versions, configuration and state persistence alongside the first executable delivery. Record what local environments cannot establish about availability, ordering or durability.
 
-## Design review prompts
-1. Which invariant would be violated by two concurrent requests?
-2. What becomes durable before the caller receives success?
-3. What can be replayed and what cannot?
-4. Which failure does a local simulator fail to reproduce?
-5. What is the smallest useful implementation of this design?
+## Compatibility
+Version interfaces and fixtures when their semantics change. Sibling projects are optional integrations, not implicit filesystem dependencies.

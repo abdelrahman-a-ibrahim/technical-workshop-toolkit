@@ -1,27 +1,18 @@
-# Operations plan
+# Operations and deployment
 
-Status: design only. No resources are provisioned by this scaffold.
+Status: runtime and deployment are not implemented.
 
-## Local path
-The only runnable command currently supplied is `python3 tools/check_foundation.py`. Interfaces are unimplemented; the synthetic fixture requires no account or network. Choose runtime versions and pin dependencies when implementation begins.
+## Current commands
+`python3 tools/check_project.py` checks Python syntax, JSON parsing and required source documents. It performs no network or cloud operations and does not start an application.
 
-## Cloud / external adapter gate
-Before introducing live services, fill in:
-- Dedicated sandbox account/project and intended identity:
-- Region and resource inventory:
-- Per-resource expected hourly/request/storage cost:
-- Total planned experiment allowance and how usage is checked:
-- Maximum experiment duration:
-- Permission boundaries and short-lived authentication approach:
-- Third-party model/provider usage limits, if used:
-- Creation, verification and teardown commands:
-- Retained state, backups, artifacts and their retention:
-- How residual billable resources will be checked:
+## Deployment prerequisites
+Before adding a live environment, document tool/dependency versions, scoped authentication, configuration, account/region, resource inventory, operating cost, retention and cleanup. Separate local development configuration from deployed state.
 
-Do not assume a trial or free tier is available. Alerts do not stop spending. The initial repository contains no cloud deploy or destructive cleanup script.
+## Runtime runbook
+The first executable release must document startup/shutdown, health checks, normal operations, dependency failures, recovery, backup/restore where relevant and decommissioning. Identify the operator actions that cannot be automated safely.
 
-## Implementation runbook to write
-Document setup, normal operation, health signals, common failures, recovery, backup/restore where relevant, credential rotation and complete decommission. Distinguish automatic recovery from operator action.
+## Cost and resource lifecycle
+External providers may incur charges. Define a bounded experiment duration, usage checks and a teardown inventory before provisioning. Budget alerts are notifications, not hard spending caps. No deployment or resource destruction command is supplied in the current source.
 
-## Incident exercise
-Use the failure-lab template. Record the difference between a failed experiment, a service incident and an instrumentation problem.
+## Configuration
+Do not commit credentials, cloud state, private endpoints or real customer data. Use synthetic examples and locally supplied secrets. Document each configuration input and its scope when an adapter is implemented.

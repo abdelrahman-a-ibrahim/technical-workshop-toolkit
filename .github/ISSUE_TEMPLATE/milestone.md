@@ -1,17 +1,15 @@
 ---
-name: Milestone implementation
-about: Define a small, reviewable engineering increment
+name: Feature or delivery milestone
+about: Define a reviewable implementation change
 ---
-## Milestone and outcome
+## Problem and expected behavior
 
-## Invariant and acceptance scenario
+## Scope and acceptance criteria
 
-## Proposed approach and alternatives
+## Design and alternatives
 
-## Failure / recovery case
+## Failure and recovery behavior
 
-## Dependencies and local / cloud boundary
+## Verification and deployment impact
 
-## Test and evidence plan
-
-## Cleanup / cost implications
+## Documentation changes

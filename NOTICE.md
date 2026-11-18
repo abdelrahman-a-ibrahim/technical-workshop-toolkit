@@ -1,6 +1,5 @@
 # Project notice
 
-Original independent educational scaffold prepared for Abdelrahman Ahmed.
-No employer source code, private documentation or customer material is included.
+Independent personal software project by Abdelrahman Ahmed. Development examples use synthetic data; employer source code and private operational material are outside the project scope.
 
-No open-source license has been selected. Public hosting, if chosen later, does not by itself grant an open-source license. Choose a license deliberately before inviting reuse or contributions, and review third-party licenses when adding dependencies or vendored assets.
+No open-source license has been selected. Public hosting alone does not grant an open-source license. Select a license deliberately before inviting reuse or contributions, and review third-party licensing when introducing dependencies or vendored assets.
